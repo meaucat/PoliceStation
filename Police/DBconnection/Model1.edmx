@@ -16,6 +16,11 @@
           <Property Name="alibi" Type="nvarchar" MaxLength="50" />
           <Property Name="idPoliceman" Type="int" />
           <Property Name="status" Type="bit" />
+          <Property Name="age" Type="int" />
+          <Property Name="height" Type="int" />
+          <Property Name="weight" Type="int" />
+          <Property Name="idGender" Type="int" />
+          <Property Name="description" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -54,6 +59,18 @@
           <Property Name="password" Type="nvarchar" MaxLength="50" />
           <Property Name="login" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <Association Name="FK_Aplication_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Aplication" Type="Self.Aplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Aplication">
+              <PropertyRef Name="idGender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Application_User">
           <End Role="User" Type="Self.User" Multiplicity="0..1" />
           <End Role="Aplication" Type="Self.Aplication" Multiplicity="*" />
@@ -120,6 +137,10 @@
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Aplication_Gender" Association="Self.FK_Aplication_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Aplication" EntitySet="Aplication" />
+          </AssociationSet>
           <AssociationSet Name="FK_Application_User" Association="Self.FK_Application_User">
             <End Role="User" EntitySet="User" />
             <End Role="Aplication" EntitySet="Aplication" />
@@ -159,6 +180,12 @@
           <NavigationProperty Name="User1" Relationship="Self.FK_Application_User1" FromRole="Aplication" ToRole="User" />
           <NavigationProperty Name="User2" Relationship="Self.FK_Application_User2" FromRole="Aplication" ToRole="User" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="height" Type="Int32" />
+          <Property Name="weight" Type="Int32" />
+          <Property Name="idGender" Type="Int32" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Gender" Relationship="PoliceStationWervModel.FK_Aplication_Gender" FromRole="Aplication" ToRole="Gender" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -167,6 +194,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Gender" FromRole="Gender" ToRole="User" />
+          <NavigationProperty Name="Aplication" Relationship="PoliceStationWervModel.FK_Aplication_Gender" FromRole="Gender" ToRole="Aplication" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -290,7 +318,23 @@
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
+          <AssociationSet Name="FK_Aplication_Gender" Association="PoliceStationWervModel.FK_Aplication_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Aplication" EntitySet="Aplication" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Aplication_Gender">
+          <End Type="PoliceStationWervModel.Gender" Role="Gender" Multiplicity="0..1" />
+          <End Type="PoliceStationWervModel.Aplication" Role="Aplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Aplication">
+              <PropertyRef Name="idGender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -300,6 +344,11 @@
           <EntitySetMapping Name="Aplication">
             <EntityTypeMapping TypeName="PoliceStationWervModel.Aplication">
               <MappingFragment StoreEntitySet="Aplication">
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="idGender" ColumnName="idGender" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="height" ColumnName="height" />
+                <ScalarProperty Name="age" ColumnName="age" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="idUser" ColumnName="idUser" />

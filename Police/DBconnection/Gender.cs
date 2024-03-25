@@ -18,6 +18,7 @@ namespace Police.DBconnection
         public Gender()
         {
             this.User = new HashSet<User>();
+            this.Aplication = new HashSet<Aplication>();
         }
     
         public int id { get; set; }
@@ -25,5 +26,7 @@ namespace Police.DBconnection
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User> User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Aplication> Aplication { get; set; }
     }
 }

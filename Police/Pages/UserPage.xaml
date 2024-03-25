@@ -27,30 +27,38 @@
         <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Text="Куликов Дмитрий Николаевич" FontSize="17" HorizontalAlignment="Center" Margin="0 20 0 0"/>
 
         <!-- Заголовок -->
-        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Вы можете написать заявление на гражданина" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Вы можете написать заявление на гражданина" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Name="nameTb" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150"/>
         <!-- Рост -->
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Рост" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 50"/>
-        <TextBox Grid.Row="2" Grid.Column="0" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150"/>
+        <TextBox Name="heightTb" Grid.Row="2" Grid.Column="0" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150"/>
 
         <!-- Вес -->
         <TextBlock Grid.Row="2" Grid.Column="1" Text="Вес" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 50"/>
-        <TextBox Grid.Row="2" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150"/>
+        <TextBox Name="weightTb" Grid.Row="2" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150"/>
 
         <!-- Пол -->
         <TextBlock Grid.Row="2" Grid.Column="2" Text="Пол" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 50"/>
-        <ComboBox Grid.Row="2" Grid.Column="2" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="25"/>
+        <ComboBox Name="GenderCb" Grid.Row="2" Grid.Column="2" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="25" SelectionChanged="GenderCb_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
         <!-- Возраст -->
         <TextBlock Grid.Row="2" Grid.Column="3" Text="Возраст" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 50"/>
-        <TextBox Grid.Row="2" Grid.Column="3" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150"/>
+        <TextBox Name="AgeTb" Grid.Row="2" Grid.Column="3" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150">
+            
+        </TextBox>
 
         <!-- Опознавательные знаки -->
-        <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="Опознавательные знаки" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 60"/>
-        <TextBox Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="70" Margin="0 0 0 50"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Text="Опознавательные знаки" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 0 0 50"/>
+        <TextBox Name="DescripTb" Grid.Row="3" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="100" Margin="0 0 0 0"/>
 
         <!-- Кнопка отправить -->
-        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Content="Отправить" Height="60" FontSize="17"/>
+        <Button Name="EnterBt" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Content="Отправить" Height="60" FontSize="17" Click="EnterBt_Click"/>
 
     </Grid>
 </Page>

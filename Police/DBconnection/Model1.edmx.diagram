@@ -15,6 +15,7 @@
         <AssociationConnector Association="PoliceStationWervModel.FK_Application_User2" ManuallyRouted="false" />
         <AssociationConnector Association="PoliceStationWervModel.FK_User_Gender" ManuallyRouted="false" />
         <AssociationConnector Association="PoliceStationWervModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="PoliceStationWervModel.FK_Aplication_Gender" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

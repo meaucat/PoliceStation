@@ -39,6 +39,10 @@ namespace Police.Pages
                 {
                     NavigationService.Navigate(new ListForCriminalPage());
                 }
+                else if (App.currentUser != null && App.currentUser.idRole == 3) 
+                {
+                    NavigationService.Navigate(new UserPage());
+                }
                 else
                 {
                     MessageBox.Show("Error");

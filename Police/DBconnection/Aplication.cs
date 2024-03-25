@@ -21,9 +21,15 @@ namespace Police.DBconnection
         public Nullable<int> idPoliceman { get; set; }
         public Nullable<bool> status { get; set; }
         public string name { get; set; }
+        public Nullable<int> age { get; set; }
+        public Nullable<int> height { get; set; }
+        public Nullable<int> weight { get; set; }
+        public Nullable<int> idGender { get; set; }
+        public string description { get; set; }
     
         public virtual User User { get; set; }
         public virtual User User1 { get; set; }
         public virtual User User2 { get; set; }
+        public virtual Gender Gender { get; set; }
     }
 }
