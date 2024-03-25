@@ -24,9 +24,14 @@ namespace Police.Pages
         public CriminalPage()
         {
             InitializeComponent();
-            Aplication application = new Aplication();
-            application = Connection.PoliceStation.Aplication.Where(i => i.idCriminal == App.currentUser.id);
-            NumAppTb.Text = application.id.ToString();
+            NumAppTb.Text = App.currentApp.id.ToString();
+            NameAppTb.Text = App.currentApp.name.ToString();
+        }
+
+        private void EnterBt_Click(object sender, RoutedEventArgs e)
+        { 
+            App.currentApp.alibi = AlibiTb.Text;
+            Connection.PoliceStation.SaveChanges();
         }
     }
 }

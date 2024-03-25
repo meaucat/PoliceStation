@@ -13,10 +13,10 @@ namespace Police.DBconnection
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PoliceStationWervEntities : DbContext
+    public partial class PoliceStationWervEntities2 : DbContext
     {
-        public PoliceStationWervEntities()
-            : base("name=PoliceStationWervEntities")
+        public PoliceStationWervEntities2()
+            : base("name=PoliceStationWervEntities2")
         {
         }
     
@@ -25,7 +25,6 @@ namespace Police.DBconnection
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Alibi> Alibi { get; set; }
         public virtual DbSet<Aplication> Aplication { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<Role> Role { get; set; }

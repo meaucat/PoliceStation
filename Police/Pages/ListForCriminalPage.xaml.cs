@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Police.DBconnection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,19 @@ namespace Police.Pages
     /// </summary>
     public partial class ListForCriminalPage : Page
     {
+        public static List<Aplication> aplications { get; set; }
         public ListForCriminalPage()
         {
             InitializeComponent();
+            aplications = Connection.PoliceStation.Aplication.Where(i => i.idCriminal == App.currentUser.id).ToList();
+            ListView.ItemsSource = aplications;
+            DataContext = this;
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            App.currentApp = ListView.SelectedItem as Aplication;
+            NavigationService.Navigate(new CriminalPage());
         }
     }
 }

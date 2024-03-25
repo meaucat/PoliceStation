@@ -22,6 +22,7 @@ namespace Police.Pages
     /// </summary>
     public partial class AuthorizationPage : Page
     {
+       
         public AuthorizationPage()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace Police.Pages
                 App.currentUser = Connection.PoliceStation.User.FirstOrDefault(i => i.login == login && i.password == password);
                 if (App.currentUser != null && App.currentUser.idRole == 2)
                 {
-                    NavigationService.Navigate(new CriminalPage());
+                    NavigationService.Navigate(new ListForCriminalPage());
                 }
                 else
                 {

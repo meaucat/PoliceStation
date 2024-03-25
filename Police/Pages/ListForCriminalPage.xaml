@@ -9,11 +9,11 @@
       Title="ListForCriminalPage">
 
     <Grid>
-        <ListView ItemsSource="{Binding animal}"
+        <ListView
          Name="ListView"
         Width="460"
         Height="200" Grid.Row="1" Grid.ColumnSpan="6"
-                  Grid.RowSpan="3">
+                  Grid.RowSpan="3" SelectionChanged="ListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
@@ -21,7 +21,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Type.Name}"></TextBlock>
+                                        <TextBlock Text="{Binding id}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -30,7 +30,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding Age}"></TextBlock>
+                                        <TextBlock Text="{Binding Alibi.description}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -39,7 +39,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding WhenWakeUp}"></TextBlock>
+                                        <TextBlock Text="{Binding status}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
