@@ -24,5 +24,10 @@ namespace Police.Pages
         {
             InitializeComponent();
         }
+
+        private void EnterBt_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
