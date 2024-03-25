@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Police.DBconnection;
+
 
 namespace Police.Pages
 {
@@ -27,7 +29,22 @@ namespace Police.Pages
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new UserPage());
+            try
+            {
+                string login = LoginTb.Text.Trim().ToLower();
+                string password = PasswordTb.Password.Trim().ToLower();
+                App.currentUser = Connection.PoliceStation.User.FirstOrDefault(i => i.login == login && i.password == password);
+                if (App.currentUser != null && App.currentUser.idRole == 2)
+                {
+                    NavigationService.Navigate(new CriminalPage());
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+            }
+            catch
+            { }
         }
     }
 }

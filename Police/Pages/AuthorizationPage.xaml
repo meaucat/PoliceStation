@@ -25,8 +25,8 @@
 
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="Welcome" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="30"/>
 
-        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Login" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60"  Width="300" FontSize="17"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Text="Password" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60"  Width="300" FontSize="17"/>
+        <TextBox Name="LoginTb" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Login" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60"  Width="300" FontSize="17"/>
+        <PasswordBox Name="PasswordTb" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Password="Password" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60"  Width="300" FontSize="17"/>
 
         <Button x:Name="EnterBtn" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Content="Enter" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="17" Height="50" Width="300" Click="EnterBtn_Click" />
 
