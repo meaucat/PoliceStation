@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Police.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AuthorizationPage.xaml
+    /// Логика взаимодействия для UserPage.xaml
     /// </summary>
-    public partial class AuthorizationPage : Page
+    public partial class UserPage : Page
     {
-        public AuthorizationPage()
+        public UserPage()
         {
             InitializeComponent();
-        }
-
-        private void EnterBtn_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new UserPage());
         }
     }
 }

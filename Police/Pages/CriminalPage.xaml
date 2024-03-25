@@ -24,8 +24,11 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Text="Куликов Дмитрий Николаевич" FontSize="17" HorizontalAlignment="Center" Margin="0 20 0 0"/>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="На вас написали заявление! &#10;Номер заявления: " FontSize="17" HorizontalAlignment="Center" Margin="0 20 0 0"/>
 
-        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="На вас написали заявление!" FontSize="17" HorizontalAlignment="Center" Margin="0 20 0 0"/>
-        <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Номер заявления: " FontSize="17"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Напишите свое алиби, чтобы оправдать себя" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" FontSize="15"/>
+        <Button Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Content="Отправить" Height="60" FontSize="17"/>
     </Grid>
 </Page>
