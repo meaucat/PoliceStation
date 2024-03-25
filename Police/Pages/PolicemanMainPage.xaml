@@ -33,7 +33,7 @@
         <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Список пользователей, для проверки алиби" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <!-- Список пользователей -->
-        <ListView ItemsSource="{Binding animal}"
+        <ListView ItemsSource="{Binding User}"
             Name="ListView"
             Grid.Row="2" 
             Grid.RowSpan="2"
@@ -45,7 +45,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Type.Name}"></TextBlock>
+                                        <TextBlock Text="{Binding Surname}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -54,7 +54,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding Age}"></TextBlock>
+                                        <TextBlock Text="{Binding Name}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -63,7 +63,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding WhenWakeUp}"></TextBlock>
+                                        <TextBlock Text="{Binding Patronymic}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -72,7 +72,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding WhenWakeUp}"></TextBlock>
+                                        <TextBlock Text="{Binding Height}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -81,7 +81,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding WhenWakeUp}"></TextBlock>
+                                        <TextBlock Text="{Binding Weight}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -90,7 +90,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding WhenWakeUp}"></TextBlock>
+                                        <TextBlock Text="{Binding Type.Name}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -99,7 +99,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <TextBlock Text="{Binding WhenWakeUp}"></TextBlock>
+                                        <TextBlock Text="{Binding Age}"></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -114,11 +114,11 @@
         <TextBlock Grid.Row="1" Grid.Column="2" Text="Кто написал:" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 60 0 0"/>
         <TextBlock Grid.Row="1" Grid.Column="3" Text="На кого:" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 60 0 0"/>
         
-        <ListView ItemsSource="{Binding animal}"
+        <ListView ItemsSource="{Binding Application}"
             Grid.Row="2" 
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"
-                  Grid.Column="2">
+                  Grid.Column="2" SelectionChanged="ListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
@@ -182,6 +182,10 @@
         </ListView>
 
         <!-- Кнопка статистика -->
-        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Статистика" Height="50" Width="200" FontSize="17" Margin="0 0 70 0"/>
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Статистика" Height="50" Width="200" FontSize="17"/>
+        
+        <!-- Пояснение -->
+        <TextBlock Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Text="Для просмотра алиби нажмите на заявление" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
     </Grid>
 </Page>

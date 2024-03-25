@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Police.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для PolicemanMainPage.xaml
+    /// Логика взаимодействия для ViewAlibiPolicemanApplicationPage.xaml
     /// </summary>
-    public partial class PolicemanMainPage : Page
+    public partial class ViewAlibiPolicemanApplicationPage : Page
     {
-        public PolicemanMainPage()
+        public ViewAlibiPolicemanApplicationPage()
         {
             InitializeComponent();
-        }
-
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }
