@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Police.DBconnection;
 
 namespace Police.Pages
 {
@@ -23,6 +24,9 @@ namespace Police.Pages
         public CriminalPage()
         {
             InitializeComponent();
+            Aplication application = new Aplication();
+            application = Connection.PoliceStation.Aplication.Where(i => i.idCriminal == App.currentUser.id);
+            NumAppTb.Text = application.id.ToString();
         }
     }
 }

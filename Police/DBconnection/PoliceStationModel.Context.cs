@@ -26,7 +26,7 @@ namespace Police.DBconnection
         }
     
         public virtual DbSet<Alibi> Alibi { get; set; }
-        public virtual DbSet<Application> Application { get; set; }
+        public virtual DbSet<Aplication> Aplication { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }

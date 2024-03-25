@@ -12,7 +12,7 @@ namespace Police.DBconnection
     using System;
     using System.Collections.Generic;
     
-    public partial class Application
+    public partial class Aplication
     {
         public int id { get; set; }
         public Nullable<int> idUser { get; set; }

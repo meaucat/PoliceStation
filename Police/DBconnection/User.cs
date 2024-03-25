@@ -17,9 +17,9 @@ namespace Police.DBconnection
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Application = new HashSet<Application>();
-            this.Application1 = new HashSet<Application>();
-            this.Application2 = new HashSet<Application>();
+            this.Application = new HashSet<Aplication>();
+            this.Application1 = new HashSet<Aplication>();
+            this.Application2 = new HashSet<Aplication>();
         }
     
         public int id { get; set; }
@@ -32,11 +32,11 @@ namespace Police.DBconnection
         public string login { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Application> Application { get; set; }
+        public virtual ICollection<Aplication> Application { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Application> Application1 { get; set; }
+        public virtual ICollection<Aplication> Application1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Application> Application2 { get; set; }
+        public virtual ICollection<Aplication> Application2 { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual Role Role { get; set; }
     }

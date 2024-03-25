@@ -29,24 +29,24 @@ namespace Police.Pages
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
-            //    string login = LoginTb.Text.Trim().ToLower();
-            //    string password = PasswordTb.Password.Trim().ToLower();
-            //    App.currentUser = Connection.PoliceStation.User.FirstOrDefault(i => i.login == login && i.password == password);
-            //    if (App.currentUser != null && App.currentUser.idRole == 2)
-            //    {
-            //        NavigationService.Navigate(new CriminalPage());
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Error");
-            //    }
-            //}
-            //catch
-            //{ }
-
-            NavigationService.Navigate(new UserPage());
+            try
+            {
+                string login = LoginTb.Text.Trim().ToLower();
+                string password = PasswordTb.Password.Trim().ToLower();
+                App.currentUser = Connection.PoliceStation.User.FirstOrDefault(i => i.login == login && i.password == password);
+                if (App.currentUser != null && App.currentUser.idRole == 2)
+                {
+                    NavigationService.Navigate(new CriminalPage());
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
         }
     }
 }
