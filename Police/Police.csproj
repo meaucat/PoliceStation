@@ -75,7 +75,7 @@
     <Compile Include="DBconnection\Alibi.cs">
       <DependentUpon>PoliceStationModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBconnection\Application.cs">
+    <Compile Include="DBconnection\Aplication.cs">
       <DependentUpon>PoliceStationModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\Connection.cs" />
