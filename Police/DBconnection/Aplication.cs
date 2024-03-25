@@ -17,11 +17,11 @@ namespace Police.DBconnection
         public int id { get; set; }
         public Nullable<int> idUser { get; set; }
         public Nullable<int> idCriminal { get; set; }
+        public string alibi { get; set; }
         public Nullable<int> idPoliceman { get; set; }
-        public Nullable<int> idAlibi { get; set; }
         public Nullable<bool> status { get; set; }
+        public string name { get; set; }
     
-        public virtual Alibi Alibi { get; set; }
         public virtual User User { get; set; }
         public virtual User User1 { get; set; }
         public virtual User User2 { get; set; }

@@ -8,6 +8,6 @@ namespace Police.DBconnection
 {
     public class Connection
     {
-        public static PoliceStationWervEntities PoliceStation = new PoliceStationWervEntities();
+        public static PoliceStationWervEntities2 PoliceStation = new PoliceStationWervEntities2();
     }
 }

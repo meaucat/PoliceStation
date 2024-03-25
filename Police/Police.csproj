@@ -72,39 +72,36 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DBconnection\Alibi.cs">
-      <DependentUpon>PoliceStationModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBconnection\Application.cs">
-      <DependentUpon>PoliceStationModel.tt</DependentUpon>
+    <Compile Include="DBconnection\Aplication.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\Connection.cs" />
     <Compile Include="DBconnection\Gender.cs">
-      <DependentUpon>PoliceStationModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBconnection\PoliceStationModel.Context.cs">
+    <Compile Include="DBconnection\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PoliceStationModel.Context.tt</DependentUpon>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBconnection\PoliceStationModel.cs">
+    <Compile Include="DBconnection\Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PoliceStationModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBconnection\PoliceStationModel.Designer.cs">
+    <Compile Include="DBconnection\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PoliceStationModel.edmx</DependentUpon>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\Role.cs">
-      <DependentUpon>PoliceStationModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\sysdiagrams.cs">
-      <DependentUpon>PoliceStationModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\User.cs">
-      <DependentUpon>PoliceStationModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -164,12 +161,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DBconnection\PoliceStationModel.edmx">
+    <EntityDeploy Include="DBconnection\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PoliceStationModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DBconnection\PoliceStationModel.edmx.diagram">
-      <DependentUpon>PoliceStationModel.edmx</DependentUpon>
+    <None Include="DBconnection\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -181,19 +178,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBconnection\PoliceStationModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PoliceStationModel.Context.cs</LastGenOutput>
-      <DependentUpon>PoliceStationModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="DBconnection\PoliceStationModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PoliceStationModel.edmx</DependentUpon>
-      <LastGenOutput>PoliceStationModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="DBconnection\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DBconnection\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

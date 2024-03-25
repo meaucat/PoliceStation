@@ -15,5 +15,6 @@ namespace Police
     public partial class App : System.Windows.Application
     {
         public static User currentUser;
+        public static Aplication currentApp;
     }
 }
