@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f660d48ab7424a16804a20f6352c9afb" Name="Diagram1">
         <EntityTypeShape EntityType="PoliceStationWervModel.Alibi" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="PoliceStationWervModel.Application" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PoliceStationWervModel.Aplication" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="PoliceStationWervModel.Gender" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
         <EntityTypeShape EntityType="PoliceStationWervModel.Role" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="PoliceStationWervModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />

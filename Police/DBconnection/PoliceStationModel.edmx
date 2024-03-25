@@ -4,24 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище PoliceStationWervModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище PoliceStationWervModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Alibi">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Application">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idUser" Type="int" />
-          <Property Name="idCriminal" Type="int" />
-          <Property Name="idPoliceman" Type="int" />
-          <Property Name="idAlibi" Type="int" />
-          <Property Name="status" Type="bit" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -60,54 +49,6 @@
           <Property Name="password" Type="nvarchar" MaxLength="50" />
           <Property Name="login" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK_Application_Alibi">
-          <End Role="Alibi" Type="Self.Alibi" Multiplicity="0..1" />
-          <End Role="Application" Type="Self.Application" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Alibi">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Application">
-              <PropertyRef Name="idAlibi" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Application_User">
-          <End Role="User" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Application" Type="Self.Application" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Application">
-              <PropertyRef Name="idUser" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Application_User1">
-          <End Role="User" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Application" Type="Self.Application" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Application">
-              <PropertyRef Name="idCriminal" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Application_User2">
-          <End Role="User" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Application" Type="Self.Application" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Application">
-              <PropertyRef Name="idPoliceman" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_User_Gender">
           <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -134,27 +75,10 @@
         </Association>
         <EntityContainer Name="Хранилище PoliceStationWervModelContainer">
           <EntitySet Name="Alibi" EntityType="Self.Alibi" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Application" EntityType="Self.Application" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Application_Alibi" Association="Self.FK_Application_Alibi">
-            <End Role="Alibi" EntitySet="Alibi" />
-            <End Role="Application" EntitySet="Application" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Application_User" Association="Self.FK_Application_User">
-            <End Role="User" EntitySet="User" />
-            <End Role="Application" EntitySet="Application" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Application_User1" Association="Self.FK_Application_User1">
-            <End Role="User" EntitySet="User" />
-            <End Role="Application" EntitySet="Application" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Application_User2" Association="Self.FK_Application_User2">
-            <End Role="User" EntitySet="User" />
-            <End Role="Application" EntitySet="Application" />
-          </AssociationSet>
           <AssociationSet Name="FK_User_Gender" Association="Self.FK_User_Gender">
             <End Role="Gender" EntitySet="Gender" />
             <End Role="User" EntitySet="User" />
@@ -164,8 +88,7 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PoliceStationWervModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -177,7 +100,7 @@
           <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Application" Relationship="Self.FK_Application_Alibi" FromRole="Alibi" ToRole="Application" />
         </EntityType>
-        <EntityType Name="Application">
+        <EntityType Name="Aplication">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -238,7 +161,7 @@
         </EntityType>
         <Association Name="FK_Application_Alibi">
           <End Role="Alibi" Type="Self.Alibi" Multiplicity="0..1" />
-          <End Role="Application" Type="Self.Application" Multiplicity="*" />
+          <End Role="Application" Type="PoliceStationWervModel.Aplication" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Alibi">
               <PropertyRef Name="id" />
@@ -250,7 +173,7 @@
         </Association>
         <Association Name="FK_Application_User">
           <End Role="User" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Application" Type="Self.Application" Multiplicity="*" />
+          <End Role="Application" Type="PoliceStationWervModel.Aplication" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="id" />
@@ -262,7 +185,7 @@
         </Association>
         <Association Name="FK_Application_User1">
           <End Role="User" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Application" Type="Self.Application" Multiplicity="*" />
+          <End Role="Application" Type="PoliceStationWervModel.Aplication" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="id" />
@@ -274,7 +197,7 @@
         </Association>
         <Association Name="FK_Application_User2">
           <End Role="User" Type="Self.User" Multiplicity="0..1" />
-          <End Role="Application" Type="Self.Application" Multiplicity="*" />
+          <End Role="Application" Type="PoliceStationWervModel.Aplication" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="id" />
@@ -310,26 +233,26 @@
         </Association>
         <EntityContainer Name="PoliceStationWervEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Alibi" EntityType="Self.Alibi" />
-          <EntitySet Name="Application" EntityType="Self.Application" />
+          <EntitySet Name="Aplication" EntityType="PoliceStationWervModel.Aplication" />
           <EntitySet Name="Gender" EntityType="Self.Gender" />
           <EntitySet Name="Role" EntityType="Self.Role" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="User" EntityType="Self.User" />
           <AssociationSet Name="FK_Application_Alibi" Association="Self.FK_Application_Alibi">
             <End Role="Alibi" EntitySet="Alibi" />
-            <End Role="Application" EntitySet="Application" />
+            <End Role="Application" EntitySet="Aplication" />
           </AssociationSet>
           <AssociationSet Name="FK_Application_User" Association="Self.FK_Application_User">
             <End Role="User" EntitySet="User" />
-            <End Role="Application" EntitySet="Application" />
+            <End Role="Application" EntitySet="Aplication" />
           </AssociationSet>
           <AssociationSet Name="FK_Application_User1" Association="Self.FK_Application_User1">
             <End Role="User" EntitySet="User" />
-            <End Role="Application" EntitySet="Application" />
+            <End Role="Application" EntitySet="Aplication" />
           </AssociationSet>
           <AssociationSet Name="FK_Application_User2" Association="Self.FK_Application_User2">
             <End Role="User" EntitySet="User" />
-            <End Role="Application" EntitySet="Application" />
+            <End Role="Application" EntitySet="Aplication" />
           </AssociationSet>
           <AssociationSet Name="FK_User_Gender" Association="Self.FK_User_Gender">
             <End Role="Gender" EntitySet="Gender" />
@@ -351,18 +274,6 @@
               <MappingFragment StoreEntitySet="Alibi">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="description" ColumnName="description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Application">
-            <EntityTypeMapping TypeName="PoliceStationWervModel.Application">
-              <MappingFragment StoreEntitySet="Application">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="idUser" ColumnName="idUser" />
-                <ScalarProperty Name="idCriminal" ColumnName="idCriminal" />
-                <ScalarProperty Name="idPoliceman" ColumnName="idPoliceman" />
-                <ScalarProperty Name="idAlibi" ColumnName="idAlibi" />
-                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -44,7 +44,9 @@ namespace Police.Pages
                 }
             }
             catch
-            { }
+            {
+                MessageBox.Show("Error");
+            }
         }
     }
 }
